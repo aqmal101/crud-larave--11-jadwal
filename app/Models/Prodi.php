@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Mahasiswa extends Model
+class Prodi extends Model
 {
     use HasFactory;
-    protected $table='data_mahasiswa';
+
+    protected $table = 'prodi';
     protected $fillable = [
-        'nim',
-        'nama',
-        'angkatan',
-        'prodi',
-        'fakultas',
+        'kode_prodi',
+        'nama_prodi',
     ];
 }

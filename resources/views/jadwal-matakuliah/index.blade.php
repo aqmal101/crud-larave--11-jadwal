@@ -70,6 +70,5 @@
 <script type="text/javascript">
 new DataTable('#data-barang');
 </script>
-@include('jadwal-matakuliah.modals.add')
 
 @endsection

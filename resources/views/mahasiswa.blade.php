@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -24,6 +24,7 @@
                                     <th>Angkatan</th>
                                     <th>Prodi</th>
                                     <th>Fakultas</th>
+                                    <th>aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -36,8 +37,19 @@
                                     <td>{{ $row->angkatan }}</td>
                                     <td>{{ $row->prodi }}</td>
                                     <td>{{ $row->fakultas }}</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                            data-bs-target="#modalEditData{{ $row->nim }}">
+                                            <i class="fa fa-edit"></i> Edit
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                            data-bs-target="#modalHapusData{{ $row->nim }}">
+                                            <i class="fa fa-trash"></i> Hapus
+                                        </button>
+                                    </td>
                                 </tr>
                                 <?php $no++; ?>
+                                @include('edit')
                                 @endforeach
 
                             </tbody>

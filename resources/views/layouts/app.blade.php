@@ -31,12 +31,18 @@
                 </a>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/data-mahasiswa') }}" style="color: #fff"> DATA MAHASISWA
+                        <a class="nav-link" href="{{ url('/data-mahasiswa') }}" style="color: #fff">
+                            DATA MAHASISWA
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/jadwal-matakuliah') }}" style="color: #fff"> JADWAL
-                            MATAKULIAH
+                        <a class="nav-link" href="{{ url('/jadwal-matakuliah') }}" style="color: #fff">
+                            JADWAL MATAKULIAH
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/prodi') }}" style="color: #fff">
+                            PRODI
                         </a>
                     </li>
                 </ul>
