@@ -1,5 +1,5 @@
 <!-- Modal Tambah Data -->
-<div class="modal fade" id="editdata{{ $row->kd_bayar }}">
+<div class="modal fade" id="editdata{{ $row->nis }}">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 

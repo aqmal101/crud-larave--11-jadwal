@@ -14,10 +14,9 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-    <!-- bootstrap icon -->
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-        integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <!-- Fontawesome icon -->
+    <script src="https://kit.fontawesome.com/5f815bdce1.js" crossorigin="anonymous"></script>
+
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -120,22 +119,22 @@
                     </li>
                     <li class="{{ Request::is('data-mahasiswa') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ url('/data-mahasiswa') }}" style="color: #fff">
-                            <i class="fa fa-users"></i> <span>Data Mahasiswa</span>
+                            <i class="fa fa-users"></i> <span>Data Siswa</span>
                         </a>
                     </li>
                     <li class="{{ Request::is('jadwal-matakuliah') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ url('/jadwal-matakuliah') }}" style="color: #fff">
-                            <i class="fa fa-book"></i> <span>Jadwal Matakuliah</span>
+                            <i class="fa fa-book"></i> <span>Data Jadwal Pelajaran</span>
                         </a>
                     </li>
                     <li class="{{ Request::is('prodi') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ url('/prodi') }}" style="color: #fff">
-                            <i class="fa fa-graduation-cap"></i> <span>Data Program Studi</span>
+                            <i class="fa fa-graduation-cap"></i> <span>Data Guru</span>
                         </a>
                     </li>
                     <li class="{{ Request::is('pembayaran') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ url('/pembayaran') }}" style="color: #fff">
-                            <i class="fa fa-graduation-cap"></i> <span>Data Angsuran SPP</span>
+                            <i class="fa-solid fa-file-invoice-dollar"></i> <span>Data Angsuran SPP</span>
                         </a>
                     </li>
 
@@ -148,7 +147,7 @@
                 <div class="container py-3">
                     <div id="content" style="margin-right:30px">
                         <button type="button" id="sidebarCollapse" class="btn border">
-                            <i class="fa fa-bars text-light"></i>
+                            <i class="fa-solid fa-bars text-light"></i>
                         </button>
                     </div>
                     <span class="navbar-brand text-light">

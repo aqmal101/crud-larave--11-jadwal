@@ -29,10 +29,16 @@ Route::post('/prodi-simpan', [App\Http\Controllers\ProdiController::class, 'simp
 Route::put('/prodi-edit/{id}', [App\Http\Controllers\ProdiController::class, 'edit'])->name('prodi-edit');
 Route::delete('/prodi-hapus/{id}', [App\Http\Controllers\ProdiController::class, 'hapus'])->name('prodi-hapus');
 
+// Route::controller(App\Http\Controllers\PembayaranController::class)->group(function () {
+//     Route::get('/pembayaran', 'index')->name('pembayaran');
+//     Route::post('/pembayaran-simpan', 'simpan')->name('pembayaran');
+//     Route::put('/pembayaran-edit/{id}', 'edit')->name('pembayaran-edit');
+//     Route::delete('/pembayaran-hapus/{id}', 'hapus')->name('pembayaran-hapus');
+//     Route::post('/pembayaran-import', 'import_excel')->name('pembayaran-import');
+// });
+
 Route::controller(App\Http\Controllers\PembayaranController::class)->group(function () {
     Route::get('/pembayaran', 'index')->name('pembayaran');
     Route::post('/pembayaran-simpan', 'simpan')->name('pembayaran');
-    Route::put('/pembayaran-edit/{id}', 'edit')->name('pembayaran-edit');
     Route::delete('/pembayaran-hapus/{id}', 'hapus')->name('pembayaran-hapus');
-    Route::post('/pembayaran-import', 'import_excel')->name('pembayaran-import');
 });

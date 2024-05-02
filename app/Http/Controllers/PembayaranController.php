@@ -1,61 +1,57 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Pembayaran;
 use Illuminate\Http\Request;
-
-use Maatwebsite\Excel\Facades\Excel;
-use App\Imports\PembayaranImport;
+use Illuminate\Support\Facades\DB;
 
 class PembayaranController extends Controller
 {
-    // menampilkan 
     public function index()
     {
-        $data = Pembayaran::all();
+        $data = Pembayaran::select('nis', 'nama', 'kelas', 'bayar_jan', 'bayar_feb', 'bayar_mar', 'bayar_apr', 'bayar_mei', 'bayar_jun', DB::raw('bayar_jan + bayar_feb + bayar_mar + bayar_apr + bayar_mei + bayar_jun as total'))->get();
         return view('pembayaran.index', compact('data'));
     }
-
-    //simpan data
+    
     public function simpan(Request $request)
     {
         $data = new Pembayaran();
-            $data->kd_bayar=$request->kd_bayar;
-            $data->nim=$request->nim;
-            $data->semester=$request->semester;
-            $data->thn_ajar=$request->thn_ajar;
-            $data->jml_bayar=$request->jml_bayar;
-            $data->tgl_bayar=$request->tgl_bayar;
-            $data->mtd_bayar=$request->mtd_bayar;
-            $data->sts_bayar=$request->sts_bayar;
-            
+            $data->nis=$request->nis;
+            $data->nama=$request->nama;
+            $data->kelas=$request->kelas;
+            $data->bayar_jan=$request->bayar_jan;
+            $data->bayar_feb=$request->bayar_feb;
+            $data->bayar_mar=$request->bayar_mar;
+            $data->bayar_apr=$request->bayar_apr;
+            $data->bayar_mei=$request->bayar_mei;
+            $data->bayar_jun=$request->bayar_jun;  
         $data->save();
         return back();
     }
 
 
     // Edit Data
-    public function edit(Request $request, int $kd_bayar)
+    public function edit(Request $request, int $nis)
     {
-        $data = Prodi::where('kd_bayar', $kd_bayar);
-        $data->update($request->only(['kd_bayar', 
-                                        'nim', 
-                                        'semester', 
-                                        'thn_ajar', 
-                                        'jml_bayar', 
-                                        'tgl_bayar', 
-                                        'mtd_bayar', 
-                                        'sts_bayar'])
+        $data = Pembayaran::where('nis', $nis);
+        $data->update($request->only(['nis', 
+                                        'nama', 
+                                        'kelas', 
+                                        'bayar_jan', 
+                                        'bayar_feb', 
+                                        'bayar_mar', 
+                                        'bayar_apr', 
+                                        'bayar_mei',
+                                        'bayar_jan',
+                                        ])
         );
 
         return back();
     }
 
-    // hapus data
-    public function hapus(int $kd_bayar)
+    public function hapus(int $nis)
     {
-        Prodi::where('kd_bayar', $kd_bayar)->delete();
+        Pembayaran::where('nis', $nis)->delete();
  
         return back();
     }

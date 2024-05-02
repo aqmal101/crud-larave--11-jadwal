@@ -11,13 +11,14 @@ class Pembayaran extends Model
 
     protected $table = 'pembayarans';
     protected $fillable = [
-        'kd_bayar',
-        'nim',
-        'semester',
-        'thn_ajar',
-        'jml_bayar',
-        'tgl_bayar',
-        'mtd_bayar',
-        'sts_bayar'
+        'nis',
+        'nama',
+        'kelas',
+        'bayar_jan',
+        'bayar_feb',
+        'bayar_mar',
+        'bayar_apr',
+        'bayar_mei',
+        'bayar_jun',
     ];
 }
